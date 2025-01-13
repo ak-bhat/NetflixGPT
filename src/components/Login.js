@@ -21,7 +21,7 @@ const Login = () => {
     if (message !== null) return;
 
     if (!isSigninForm) {
-      //Signup logic
+      //Signup logic from Firebase api website
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
@@ -52,8 +52,13 @@ const Login = () => {
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
-          setErrorMessage(errorCode + "-" + errorMessage);
+          if(errorCode=="auth/invalid-credential"){
+            setErrorMessage("Invalid Credentials");
+          }else{
+            const errorMessage = error.message;
+            setErrorMessage(errorCode + "-" + errorMessage);
+          }
+          
         });
     }
   };
