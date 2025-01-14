@@ -30,7 +30,7 @@ const Header = () => {
         <div className="flex p-4">
           <img
             className="w-10 h-10 m-2"
-            src="https://i.pinimg.com/originals/76/49/b0/7649b0de59f4d7c55b1fb1f998185587.jpg"
+            src={user.photoURL}
             alt="ProPic"
           />
           <button onClick={handleSignOut} className="font-bold text-white">
