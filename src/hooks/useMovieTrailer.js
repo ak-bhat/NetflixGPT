@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux";
-import { VIDEO_URL } from "../utils/constants";
+import { API_OPTIONS, VIDEO_URL } from "../utils/constants";
 import { addTrailerVideo } from "../utils/moviesSlice";
 import { useEffect } from "react";
 
-const useMovieTrailer = () =>{
+const useMovieTrailer = (movieId) =>{
     const dispatch = useDispatch();
 
   const getMovieVideos = async () => {
-    const data = await fetch(VIDEO_URL, process.env.REACT_APP_API_OPTIONS);
+    const data = await fetch(VIDEO_URL+movieId+"/videos?language=en-US", API_OPTIONS );
     const json = await data.json();
 
     // console.log(json.results);
