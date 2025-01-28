@@ -10,13 +10,10 @@ const useMovieTrailer = (movieId) =>{
     const data = await fetch(VIDEO_URL+movieId+"/videos?language=en-US", API_OPTIONS );
     const json = await data.json();
 
-    // console.log(json.results);
-
     const trailerData = json.results.filter(
       (movie) => movie.type === "Trailer"
     );
     const trailer = trailerData.length ? trailerData[0] : json.results[0];
-    // console.log(trailerData[0]);
 
     dispatch(addTrailerVideo(trailer));
   };

@@ -9,7 +9,6 @@ const MainContainer = () => {
     
     const mainMovie = movies[0]
 
-    // console.log(mainMovie);
 
     const {title, overview, id} = mainMovie
     
