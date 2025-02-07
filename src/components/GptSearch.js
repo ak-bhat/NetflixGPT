@@ -6,7 +6,7 @@ const GptSearch = () => {
   return (
     <div>
       <div className="absolute -z-10">
-        <img src={BACKGROUND} alt="background" />
+        <img className="fixed" src={BACKGROUND} alt="background" />
       </div>
       <div className="flex pt-20 justify-center">
         <GptSearchBar />
