@@ -26,7 +26,6 @@ const GptSearchBar = () => {
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-
     const result = await model.generateContent(gptQuery);
 
     // console.log(result.response.text());
@@ -35,7 +34,7 @@ const GptSearchBar = () => {
 
     const promiseArray = gptMovies.map((movie)=>searchMovieTMDB(movie))  // Will return array of promises [p1,p2..p5] we have five movies so five times promise is returned
 
-    const searchMovieData = await Promise.all(promiseArray)
+    const searchMovieData = result.response.text() === "Sorry no suggestions"? "Sorry no suggestions" : await Promise.all(promiseArray)
     
     // console.log(searchMovieData);
 
