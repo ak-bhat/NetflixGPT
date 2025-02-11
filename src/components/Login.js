@@ -92,16 +92,16 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
+        <img className="h-screen object-cover md:w-screen"
           src={BACKGROUND}
           alt="background"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className=" w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white bg-opacity-75"
+        className="w-7/12 md:w-3/12 absolute p-9 md:p-5 bg-black my-24 md:my-326 mx-auto right-0 left-0 text-white bg-opacity-75"
       >
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="font-bold text-center text-xl md:text-3xl md:py-4">
           {isSigninForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSigninForm && (
@@ -126,12 +126,12 @@ const Login = () => {
         />
         <p className="text-red-600 font-bold text-lg">{errorMessage}</p>
         <button
-          className="p-4 my-6 bg-red-700 w-full rounded-lg"
+          className="p-4 my-6 w-24 md:mx-0 mx-16 bg-red-700 md:w-full rounded-lg"
           onClick={handleButtonClick}
         >
           {isSigninForm ? "Sign In" : "Sign Up"}
         </button>
-        <p className="py-6">
+        <p className="text-center md:py-6">
           {isSigninForm ? (
             <>
               New to Netflix?{" "}
